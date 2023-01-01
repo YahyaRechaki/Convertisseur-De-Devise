@@ -23,7 +23,6 @@ import android.widget.Toast;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
@@ -140,26 +139,17 @@ public class MainActivity extends AppCompatActivity {
                                 String result = objResponseString.getString("result");
                                 String finalResult = result;
                                 runOnUiThread(new Runnable() {
-                                    @SuppressLint("UseCompatLoadingForDrawables")
                                     @Override
                                     public void run() {
-                                        float amountConverted = Float.parseFloat(finalResult);
-                                        DecimalFormat df = new DecimalFormat("#.00");
-                                        String amountFormatted = df.format(amountConverted);
                                         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
                                                 LinearLayout.LayoutParams.MATCH_PARENT,
                                                 LinearLayout.LayoutParams.WRAP_CONTENT
                                         );
-                                        int id = LinearLayout.generateViewId();
+
                                         //TextView textView = new TextView(getApplicationContext());
                                         TextView textView = new TextView(MainActivity.this);
                                         textView.setLayoutParams(params);
-                                        //textView.setBackground(getResources().getDrawable(R.drawable.border));
-                                        textView.setTextSize(20);
-                                        textView.setPadding(10, 10, 10, 10);
-                                        String textview = amountFormatted + " " + aSpinner.getSelectedItem().toString();
-                                        textView.setId(id);
-                                        textView.setText(textview);
+                                        textView.setText(String.valueOf(finalResult));
                                         Log.d("finalResult", String.valueOf(finalResult));
                                         layout.removeAllViews();
                                         layout.addView(textView);
