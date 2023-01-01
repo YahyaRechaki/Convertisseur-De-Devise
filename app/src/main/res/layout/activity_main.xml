@@ -29,7 +29,9 @@
                 android:alpha="0.5"
                 android:autoSizeTextType="uniform"
                 android:ems="10"
-                android:hint="Montant"
+                android:hint="Montant.."
+                android:background="@drawable/border"
+                android:padding="10dp"
                 android:inputType="number"
                 android:minHeight="48dp"
                 android:textAlignment="viewStart" />
@@ -57,7 +59,6 @@
                 android:singleLine="true"
                 android:ellipsize="marquee"
                 android:textColor="#F3EFEF"
-                android:text="Selectionner un Device"
                 tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck">
             </Spinner>
         </LinearLayout>
@@ -96,21 +97,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
-                android:text="Convertir"/>
-        </LinearLayout>
+                android:text="Convertir"
+                android:backgroundTint="#3E8141"
+                android:elevation="2dp"
+                android:padding="10dp"
+                android:textAllCaps="true"
+                android:textColor="#FFFFFF" />
 
-        <LinearLayout
-            android:id="@+id/layoutResultatText"
-            android:layout_width="match_parent"
-            android:layout_height="63dp"
-            android:layout_marginTop="20dp"
-            android:orientation="horizontal">
-            <TextView
-                android:id="@+id/textResult"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="15dp"
-                android:text="Montant en (Device Choisi) : " />
         </LinearLayout>
 
         <LinearLayout
